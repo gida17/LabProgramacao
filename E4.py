@@ -39,16 +39,19 @@ try:
         
     cont = 0
         
-    for x in numeros[0::quantidade+1]: 
+    for x in numeros[cont::quantidade+1]: 
         soma += x
+        cont += quantidade
     somatoriaDasDiagonais.append(soma)
     
     soma = 0
+    cont = 0
     
     numeros.reverse()
     
-    for x in numeros[0::quantidade+1]: 
+    for x in numeros[cont::quantidade+1]: 
         soma += x
+        cont += quantidade
     somatoriaDasDiagonais.append(soma)
     
     if (somatoriaDasLinhas.count(somatoriaDasLinhas[0]) == quantidade) and (somatoriaDasColunas.count(somatoriaDasColunas[0]) == quantidade) and (somatoriaDasDiagonais.count(somatoriaDasDiagonais[0]) == 2):
