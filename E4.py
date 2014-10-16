@@ -1,6 +1,9 @@
 # coding:utf-8
 
+import time #coloca antes de depois para medir o tempo
+
 try:
+    t0 = time.clock()
     texto = open("E4.in","r")
     matriz = texto.read()
     texto.close()
@@ -60,6 +63,10 @@ try:
     else:
         saida = open("E4.out","w")
         saida.write("-1\n")
+        
+    t1 = time.clock()
+    
+    print(t1-t0)
         
 except:
     print("Erro")
