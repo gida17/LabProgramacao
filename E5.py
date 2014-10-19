@@ -13,6 +13,7 @@ try:
     
     numeros = numeros.split("\n")
     quant = int(numeros[0])
+    
     for x in numeros[1::]:
         temp = x.split(" ")
         a.append(int(temp[0]))
