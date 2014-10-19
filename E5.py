@@ -1,6 +1,8 @@
+import sys
+
 try:
-    texto = open("E5.in","r")
-    saida = open("E5.out","w")
+    texto = open(sys.argv[1],"r")
+    saida = open(sys.argv[2],"w")
     numeros = texto.read()
     texto.close()
     lista =[]
