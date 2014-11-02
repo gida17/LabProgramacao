@@ -1,5 +1,7 @@
-texto = open("E7.in","r")
-saida = open("E7.out","w")
+import sys
+
+texto = open(sys.argv[1], "r")
+saida = open(sys.argv[2], "w")
 numeros = texto.read()
 texto.close()
 numeros = numeros.split("\n")
@@ -20,9 +22,9 @@ for x in numeros[1::]:
         
         if not str(x).isdigit():
             if x[0] is "f":
-                filaRegular.insert(0, x)
+                filaRegular.append(x)
             if x[0] is "p":
-                filaPreferencial.insert(0, x)
+                filaPreferencial.append(x)
                 
             if x[0] is "A":
                 if len(filaRegular) == 0:
@@ -46,9 +48,9 @@ for x in numeros[1::]:
                 if len(filaRegular) == 0:
                     saida.write("0 ")
                 else:
-                    saida.write("%s " %(filaRegular[0][2]))
+                    saida.write("%s " %(filaRegular[0][2::]))
                     
                 if len(filaPreferencial) == 0:
                     saida.write("0\n")
                 else:
-                    saida.write("%s\n" %(filaPreferencial[0][2]))
+                    saida.write("%s\n" %(filaPreferencial[0][2::]))
